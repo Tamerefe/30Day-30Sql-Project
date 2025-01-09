@@ -1,0 +1,32 @@
+INSERT INTO Social (UserId, Username, Email, AccPassword) VALUES (1, 'John','bob@example.com', '123456');
+INSERT INTO Social (UserId, Username, Email, AccPassword) VALUES (2, 'Alice', 'alice@example.com', 'pass123');
+INSERT INTO Social (UserId, Username, Email, AccPassword) VALUES (3, 'Jack', 'jack@example.com', 'superSecure');
+INSERT INTO Social (UserId, Username, Email, AccPassword) VALUES (4, 'Charlie', 'charlie@example.com', 'admin789');
+INSERT INTO Social (UserId, Username, Email, AccPassword) VALUES (5, 'Diana', 'diana@example.com', 'hello321');
+INSERT INTO Social (UserId, Username, Email, AccPassword) VALUES (6, 'Eve', 'eve@example.com', 'hunter2');
+INSERT INTO Social (UserId, Username, Email, AccPassword) VALUES (7, 'Frank', 'frank@example.com', 'secret123');
+INSERT INTO Social (UserId, Username, Email, AccPassword) VALUES (8, 'Grace', 'grace@example.com', 'myPass');
+INSERT INTO Social (UserId, Username, Email, AccPassword) VALUES (9, 'Hank', 'hank@example.com', 'password1');
+INSERT INTO Social (UserId, Username, Email, AccPassword) VALUES (10, 'Kathy', 'kathy@example.com', 'passkey999');
+
+INSERT INTO Post (PostNumber, UserId, Title, Content, CreatedDate) VALUES (1, 1, 'Gaming', 'Tips for new players in XYZ game.', TO_TIMESTAMP('2025-01-01 12:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Post (PostNumber, UserId, Title, Content, CreatedDate) VALUES (2, 2, 'Greetings', 'This is Alice!', TO_TIMESTAMP('2025-01-02 12:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Post (PostNumber, UserId, Title, Content, CreatedDate) VALUES (3, 3, 'Travel', 'I just visited Paris!', TO_TIMESTAMP('2025-01-03 12:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Post (PostNumber, UserId, Title, Content, CreatedDate) VALUES (4, 4, 'Tech Tips', 'Use strong passwords.', TO_TIMESTAMP('2025-01-03 12:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Post (PostNumber, UserId, Title, Content, CreatedDate) VALUES (5, 5, 'Recipes', 'Here’s a great pancake recipe.', TO_TIMESTAMP('2025-01-04 12:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Post (PostNumber, UserId, Title, Content, CreatedDate) VALUES (6, 6, 'Fitness', 'Workout tips for beginners.', TO_TIMESTAMP('2025-01-05 12:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Post (PostNumber, UserId, Title, Content, CreatedDate) VALUES (7, 7, 'Books', 'My favorite novels.', TO_TIMESTAMP('2025-01-06 12:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Post (PostNumber, UserId, Title, Content, CreatedDate) VALUES (8, 8, 'Music', 'The best songs of 2025.', TO_TIMESTAMP('2025-01-07 12:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Post (PostNumber, UserId, Title, Content, CreatedDate) VALUES (9, 9, 'Movies', 'Top 10 action films.', TO_TIMESTAMP('2025-01-08 12:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Post (PostNumber, UserId, Title, Content, CreatedDate) VALUES (10, 10, 'DIY', 'How to build a bookshelf.', TO_TIMESTAMP('2025-01-09 12:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO Comments (CommentID, PostID, UserId, Content) VALUES (1, 1, 2, 'Very helpful guide!');
+INSERT INTO Comments (CommentID, PostID, UserId, Content) VALUES (2, 2, 3, 'Thanks for sharing!');
+INSERT INTO Comments (CommentID, PostID, UserId, Content) VALUES (3, 3, 4, 'Great post!');
+INSERT INTO Comments (CommentID, PostID, UserId, Content) VALUES (4, 4, 5, 'Useful tips!');
+INSERT INTO Comments (CommentID, PostID, UserId, Content) VALUES (5, 5, 6, 'Yummy recipe!');
+INSERT INTO Comments (CommentID, PostID, UserId, Content) VALUES (6, 6, 7, 'Motivational post.');
+INSERT INTO Comments (CommentID, PostID, UserId, Content) VALUES (7, 7, 8, 'Thanks for the recommendations!');
+INSERT INTO Comments (CommentID, PostID, UserId, Content) VALUES (8, 8, 9, 'Amazing playlist.');
+INSERT INTO Comments (CommentID, PostID, UserId, Content) VALUES (9, 9, 10, 'Love these movie picks!');
+INSERT INTO Comments (CommentID, PostID, UserId, Content) VALUES (10, 10, 1, 'Creative DIY project!');
