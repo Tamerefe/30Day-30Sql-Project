@@ -1,0 +1,14 @@
+CREATE TABLE Products (
+    ProductID NUMBER PRIMARY KEY,
+    ProductName VARCHAR2(100) NOT NULL,
+    StockQuantity NUMBER NOT NULL,
+    ReorderLevel NUMBER NOT NULL
+);
+
+CREATE TABLE Alerts (
+    AlertID NUMBER PRIMARY KEY,
+    ProductID NUMBER NOT NULL,
+    AlertDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    AlertMessage VARCHAR2(255),
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
