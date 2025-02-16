@@ -1,0 +1,29 @@
+CREATE TABLE Orders_Partitioned (
+    OrderID NUMBER,
+    CustomerID NUMBER,
+    ProductID NUMBER,
+    OrderDate DATE,
+    Quantity NUMBER,
+    TotalPrice NUMBER(10,2),
+    StatusP VARCHAR2(20)
+)
+
+PARTITION BY RANGE (OrderDate) (
+    PARTITION orders_2020 VALUES LESS THAN (TO_DATE('2021-01-01', 'YYYY-MM-DD')),
+    PARTITION orders_2021 VALUES LESS THAN (TO_DATE('2022-01-01', 'YYYY-MM-DD')),
+    PARTITION orders_2022 VALUES LESS THAN (TO_DATE('2023-01-01', 'YYYY-MM-DD')),
+    PARTITION orders_2023 VALUES LESS THAN (TO_DATE('2024-01-01', 'YYYY-MM-DD')),
+    PARTITION orders_future VALUES LESS THAN (MAXVALUE)
+);
+
+SELECT /*+ RESULT_CACHE */ COUNT(*) FROM Orders WHERE StatusP = 'Shipped';
+
+CREATE MATERIALIZED VIEW mv_monthly_sales AS
+SELECT CustomerID, TO_CHAR(OrderDate, 'YYYY-MM') AS OrderMonth, SUM(TotalPrice) AS TotalSales
+FROM Orders
+GROUP BY CustomerID, TO_CHAR(OrderDate, 'YYYY-MM');
+
+EXPLAIN PLAN FOR
+SELECT OrderID, OrderDate, TotalPrice FROM Orders WHERE CustomerID = 123;
+
+SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY);
